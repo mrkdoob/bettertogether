@@ -1,35 +1,19 @@
 import React from "react"
-import { RouteComponentProps, Redirect } from "@reach/router"
+import { RouteComponentProps } from "@reach/router"
 
 import { Page } from "../components/Page"
-import {
-  Flex,
-  Text,
-  Button,
-  Image,
-  SimpleGrid,
-} from "@chakra-ui/core"
+import { Flex, Text, Button, Image, SimpleGrid } from "@chakra-ui/core"
 import { colors } from "../lib/colors"
-import { useGetAllCoursesQuery } from "../lib/graphql"
 import { CourseItem } from "../components/CourseItem"
 import { styled } from "../components/providers/ThemeProvider"
 
 import { Link } from "react-scroll"
-import { useMe } from "../components/providers/MeProvider"
 
-interface Props extends RouteComponentProps { }
+interface Props extends RouteComponentProps {}
 
 export const Landing: React.FC<Props> = () => {
-  const me = useMe()
-
-  const { data, loading } = useGetAllCoursesQuery({
-    fetchPolicy: "cache-and-network",
-  })
-
-  if (me) return <Redirect noThrow={true} to={`/dashboard`} />
-
   return (
-    <Page disableRedirect={true} loading={loading}>
+    <Page disableRedirect={true}>
       <Flex
         w="100%"
         h="calc(100vh - 60px)"
@@ -120,9 +104,8 @@ export const Landing: React.FC<Props> = () => {
               beweging.
             </Text>
           </Flex>
-        </Flex></Flex>
-
-
+        </Flex>
+      </Flex>
 
       <Flex
         mt={{ base: "calc(500px + 1rem)", md: "400px" }}
@@ -141,15 +124,25 @@ export const Landing: React.FC<Props> = () => {
         >
           <Flex fontWeight="semibold" fontSize="2xl" mb={4}>
             <Text color={colors[0]}>Vitaler</Text>
-            <Text ml={1} color={colors[1]}>door</Text>
-            <Text ml={1} color={colors[2]}>het</Text>
-            <Text ml={1} color={colors[3]}>leven</Text>
+            <Text ml={1} color={colors[1]}>
+              door
+            </Text>
+            <Text ml={1} color={colors[2]}>
+              het
+            </Text>
+            <Text ml={1} color={colors[3]}>
+              leven
+            </Text>
           </Flex>
           <Text color="gray.400" fontSize="xl">
-            Langdurig zitten wordt het nieuwe roken genoemd. Onderbreek het vele zitten met onze speciaal ontworpen uitdagingen die jou helpen om de negatieve gevolgen van teveel zitten en te weinig bewegen te doorbreken.
+            Langdurig zitten wordt het nieuwe roken genoemd. Onderbreek het vele
+            zitten met onze speciaal ontworpen uitdagingen die jou helpen om de
+            negatieve gevolgen van teveel zitten en te weinig bewegen te
+            doorbreken.
           </Text>
           <Text color="gray.400" fontSize="xl">
-            Wij weten dat zittend werk een grote boosdoener is en richten onze programma's speciaal op werknemers.
+            Wij weten dat zittend werk een grote boosdoener is en richten onze
+            programma's speciaal op werknemers.
           </Text>
         </StyledTextColumn>
       </Flex>
@@ -168,7 +161,10 @@ export const Landing: React.FC<Props> = () => {
             <Text color={colors[3]}>er</Text>
           </Flex>
           <Text color="gray.400" fontSize="xl">
-            De sociale omgeving is een belangrijke factor om meer te bewegen. Om succesvol nieuwe gewoontes te leren maken wij hier gebruik door samen met jouw collega's, vrienden en/of familie een uitdaging aan te gaan.
+            De sociale omgeving is een belangrijke factor om meer te bewegen. Om
+            succesvol nieuwe gewoontes te leren maken wij hier gebruik door
+            samen met jouw collega's, vrienden en/of familie een uitdaging aan
+            te gaan.
           </Text>
           <Text color="gray.400" fontSize="xl">
             Behaal zo samen jullie doelen en beloningen voor een vitaler leven.
@@ -180,11 +176,10 @@ export const Landing: React.FC<Props> = () => {
             h="300px"
             src="https://reconnectapp-dev.s3.eu-central-1.amazonaws.com/screenshot-2020-06-29-at-12-33-46-png"
             objectFit="cover"
-          // rounded="full"
+            // rounded="full"
           />
         </StyledImageColumn>
       </Flex>
-
 
       <Flex
         bg="gray.50"
@@ -246,12 +241,30 @@ export const Landing: React.FC<Props> = () => {
         </Text>
 
         <SimpleGrid spacing={6} columns={{ base: 1, md: 2, lg: 3 }} p={2}>
-          <CourseItem link="challenge" cover="https://images.unsplash.com/photo-1560741282-a3ff4a507b4f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2126&q=80" category="Beweging" name="Wandel Challenge" description="Wandel samen" />
-          <CourseItem link="" cover="https://images.unsplash.com/photo-1541625247055-1a61cfa6a591?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1234&q=80" category="Beweging" name="Fiets Challenge" description="Probeer samen vaker de fiets te pakken in deze challenge" />
-          <CourseItem link="" cover="https://images.unsplash.com/photo-1599470753165-40b764715bfe?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" category="Beweging" name="Vaker staan Challenge" description="Probeer samen het zitten te onderbreken door vaker te staan" />
+          <CourseItem
+            link="challenge"
+            cover="https://images.unsplash.com/photo-1560741282-a3ff4a507b4f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2126&q=80"
+            category="Beweging"
+            name="Wandel Challenge"
+            description="Wandel samen"
+          />
+          <CourseItem
+            link=""
+            cover="https://images.unsplash.com/photo-1541625247055-1a61cfa6a591?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1234&q=80"
+            category="Beweging"
+            name="Fiets Challenge"
+            description="Probeer samen vaker de fiets te pakken in deze challenge"
+          />
+          <CourseItem
+            link=""
+            cover="https://images.unsplash.com/photo-1599470753165-40b764715bfe?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80"
+            category="Beweging"
+            name="Vaker staan Challenge"
+            description="Probeer samen het zitten te onderbreken door vaker te staan"
+          />
         </SimpleGrid>
       </Flex>
-    </Page >
+    </Page>
   )
 }
 

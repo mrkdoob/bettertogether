@@ -1,13 +1,11 @@
 import React from "react"
-import { RouteComponentProps, Link, } from "@reach/router"
+import { RouteComponentProps, Link } from "@reach/router"
 
 import { Page } from "../components/Page"
-import { Flex, Text, Box, Heading, Button, } from "@chakra-ui/core"
+import { Flex, Text, Box, Heading, Button } from "@chakra-ui/core"
 import { styled } from "../components/providers/ThemeProvider"
 
 import { Border } from "../components/Border"
-
-
 
 export const Challenge: React.FC<RouteComponentProps> = () => {
   return (
@@ -16,7 +14,10 @@ export const Challenge: React.FC<RouteComponentProps> = () => {
         {/* Banner */}
         <StyledCoverBox
           rounded="lg"
-          backgroundImage={`url("https://images.unsplash.com/photo-1560741282-a3ff4a507b4f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2126&q=80")` || ""}
+          backgroundImage={
+            `url("https://images.unsplash.com/photo-1560741282-a3ff4a507b4f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2126&q=80")` ||
+            ""
+          }
           mt={{ base: 8, md: 0 }}
         >
           <Box
@@ -42,7 +43,7 @@ export const Challenge: React.FC<RouteComponentProps> = () => {
               Wandel Challenge
             </Heading>
             <Text mb={4}>Kom samen meer in beweging</Text>
-            <Link to={`/aanmelden`}> {/* TODO: */}
+            <Link to={`/aanmelden`}>
               <Button variantColor="gray" px={8}>
                 <Text
                   textTransform="uppercase"
@@ -51,7 +52,7 @@ export const Challenge: React.FC<RouteComponentProps> = () => {
                   color="text"
                 >
                   Begin
-                    </Text>
+                </Text>
               </Button>
             </Link>
           </Flex>
@@ -70,11 +71,9 @@ export const Challenge: React.FC<RouteComponentProps> = () => {
 
               <b>Voordelen</b>
             </Box>
-
           </Box>
         </Flex>
       </>
-
     </Page>
   )
 }

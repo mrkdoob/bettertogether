@@ -1,16 +1,10 @@
 import React from "react"
-import {
-  Text,
-  Flex,
-} from "@chakra-ui/core"
+import { Text, Flex } from "@chakra-ui/core"
 
-import { useLogout } from "../lib/hooks/useLogout"
 import { styled } from "./providers/ThemeProvider"
 import { colors } from "../lib/colors"
 
 export const Navbar: React.FC = () => {
-  const logout = useLogout()
-
   return (
     <>
       <StyledSidebar
@@ -20,11 +14,12 @@ export const Navbar: React.FC = () => {
         <Flex fontSize="xl">
           <Text color={colors[0]}>Bet</Text>
           <Text color={colors[1]}>ter</Text>
-          <Text ml={1} color={colors[2]}>Tog</Text>
+          <Text ml={1} color={colors[2]}>
+            Tog
+          </Text>
           <Text color={colors[3]}>ether</Text>
         </Flex>
       </StyledSidebar>
-
     </>
   )
 }

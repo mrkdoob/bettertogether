@@ -1,38 +1,7 @@
 import React from "react"
-import { Flex, Image, Box, Text, Heading, Tag } from "@chakra-ui/core"
+import { Flex, Image, Box, Text, Heading } from "@chakra-ui/core"
 import { Link } from "@reach/router"
-import gql from "graphql-tag.macro"
-import { CourseItemFragment, MentorItemFragmentDoc } from "../lib/graphql"
 import { styled } from "./providers/ThemeProvider"
-
-export const MENTOR_ITEM = gql`
-  fragment MentorItem on User {
-    id
-    fullName
-    avatar
-    bio
-  }
-`
-export const COURSE_ITEM = gql`
-  fragment CourseItem on Course {
-    id
-    name
-    cover
-    category
-    description
-    slug
-    fullDescription
-    duration
-    benefits
-    rewardType
-    isPublished
-    petId
-    mentor {
-      ...MentorItem
-    }
-  }
-  ${MentorItemFragmentDoc}
-`
 
 interface Props {
   link: string
@@ -45,11 +14,7 @@ interface Props {
 
 export function CourseItem(props: Props) {
   return (
-    <Link
-      to={
-        `/${props.link}`
-      }
-    >
+    <Link to={`/${props.link}`}>
       <StyledCourseItem borderRadius="lg">
         <Box w="100%" h={{ base: 130, lg: 150 }} bg="gray.100" rounded="lg">
           <StyledCover rounded="lg" src={props.cover || ""} />
