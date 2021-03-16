@@ -1,0 +1,11 @@
+[build]
+  publish = "packages/web/build"
+  command = "yarn build:web"
+  
+[build.environment]
+  YARN_VERSION = "1.21.1"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
