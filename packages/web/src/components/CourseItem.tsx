@@ -2,6 +2,7 @@ import React from "react"
 import { Flex, Image, Box, Text, Heading } from "@chakra-ui/core"
 import { Link } from "@reach/router"
 import { styled } from "./providers/ThemeProvider"
+import { Tag } from "./Tag"
 
 interface Props {
   link: string
@@ -18,6 +19,17 @@ export function CourseItem(props: Props) {
       <StyledCourseItem borderRadius="lg">
         <Box w="100%" h={{ base: 130, lg: 150 }} bg="gray.100" rounded="lg">
           <StyledCover rounded="lg" src={props.cover || ""} />
+          {props.link === "" && (
+            <Tag
+              size="sm"
+              position="relative"
+              left={2}
+              bottom={3}
+              variantColor={"red"}
+            >
+              Binnenkort beschikbaar
+            </Tag>
+          )}
         </Box>
 
         <Flex
