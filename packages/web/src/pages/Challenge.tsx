@@ -67,9 +67,69 @@ export const Challenge: React.FC<RouteComponentProps> = () => {
             <Border mb={{ base: 12, md: 20 }} mt={8} />
             {/* Description */}
             <Box px={4} fontSize="lg">
-              <Text>Descriptie</Text>
-
-              <b>Voordelen</b>
+              <Text>Wil jij in beweging komen of meer bewegen?</Text>
+              <Text> Start dan samen met de Wandel Challenge!</Text>
+              <Text>
+                Tijdens de Wandel Challenge wordt er op een laagdrempelige
+                manier een eerste stap gezet om meer te gaan bewegen.{" "}
+              </Text>
+              <Text>
+                De Wandel Challenge is voor iedereen die actiever wil worden,
+                gezondheidswinst wil boeken of voor een betere conditie gaat.{" "}
+              </Text>
+              <Text mt={4}>
+                Je kunt zelf kiezen voor hoe lang en met wie je de challenge
+                wilt uitvoeren.
+              </Text>
+              <Text>
+                Door de challenge samen met je vrienden, familie en/of collega's
+                maak je het leuker en heb je een grotere kans van slagen.
+              </Text>
+              <Text>
+                De challenge zal gefaciliteerd worden in een chat applicatie (op
+                dit moment WhatsApp).
+              </Text>
+              <Text>
+                Elke dag zullen er wat tips en weetjes met jullie gedeeld
+                worden.{" "}
+              </Text>
+              <Text>
+                Een digitale coach jullie ondersteunen wanneer daar behoefte aan
+                is.
+              </Text>
+              <Text mt={8} fontWeight="bold">
+                Voordelen
+              </Text>
+              <Text mt={4}>
+                • Wandelen verlaagt het risico op diabetes. Na langere tijd
+                zitten neemt de insulinegevoeligheid af. Dagelijks wandelen
+                verlaagt het risico op diabetes met 58%.
+              </Text>
+              <Text mt={4}>
+                • Wandelen is goed voor hart- en bloedvaten. Met wandelen
+                verlaagt u de bloeddruk en het cholesterolgehalte, het risico op
+                hartproblemen daalt aanzienlijk als u al één keer per week een
+                uur wandelt.
+              </Text>
+              <Text mt={4}>
+                • Wandelen ontspant. Zoek een mooie omgeving in de buurt op,
+                denk aan een bos, een park of het strand. Kijk eens om u heen en
+                laat u afleiden door alle mooie plaatjes van de natuur. Een half
+                uur wandelen per dag verlaagt tevens de gevolgen van stress,
+                zoals een hoge bloeddruk.
+              </Text>
+              <Text mt={4}>
+                • Wandelen verbetert uw nachtrust. Dagelijks wandelen stimuleert
+                uw dag- en nachtritme. Daarnaast zorgt wandelen voor meer
+                ontspanning. Hierdoor slaapt u makkelijker in en door.
+              </Text>
+              <Link to={`/aanmelden`}>
+                <Button variantColor="blue" px={8} my={8}>
+                  <Text fontSize="md" color="white">
+                    Begin
+                  </Text>
+                </Button>
+              </Link>{" "}
             </Box>
           </Box>
         </Flex>
